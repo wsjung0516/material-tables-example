@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Renderer2, HostListener } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2, HostListener, AfterViewInit } from '@angular/core';
 import { MatTable } from '@angular/material';
 
 @Component({
@@ -6,7 +6,7 @@ import { MatTable } from '@angular/material';
   templateUrl: './abstract-resizable-material-table.component.html',
   styleUrls: ['./abstract-resizable-material-table.component.scss']
 })
-export class AbstractResizableMaterialTableComponent implements OnInit {
+export class AbstractResizableMaterialTableComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatTable, { read: ElementRef, static: false }) protected matTableRef: ElementRef;
 
