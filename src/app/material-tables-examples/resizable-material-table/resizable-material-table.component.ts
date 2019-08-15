@@ -40,6 +40,8 @@ export class ResizableMaterialTableComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = [];
   dataSource = this.data;
 
+  resizeCursor = false;
+
   pressed = false;
   currentResizeIndex: number;
   startX: number;
@@ -79,12 +81,29 @@ export class ResizableMaterialTableComponent implements OnInit, AfterViewInit {
     });
   }
 
+  onMouseMove(event: any, index: number) {
+    const endPos = event.target.offsetLeft + event.target.clientWidth;
+
+    if (endPos - event.pageX > 10 && endPos - event.pageX >= 0) {
+      this.resizeCursor = false;
+    } else {
+      this.resizeCursor = true;
+    }
+  }
+
   onResizeColumn(event: any, index: number) {
     this.checkResizing(event, index);
     this.currentResizeIndex = index;
     this.pressed = true;
     this.startX = event.pageX;
     this.startWidth = event.target.clientWidth;
+
+    const endPos = event.target.offsetLeft + event.target.clientWidth;
+
+    if (endPos - event.pageX > 10 && endPos - event.pageX >= 0) {
+      return;
+    }
+
     event.preventDefault();
     this.mouseMove(index);
   }
