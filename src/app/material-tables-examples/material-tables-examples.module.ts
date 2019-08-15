@@ -7,9 +7,10 @@ import { MatTableExamplesComponent } from './mat-table-examples/mat-table-exampl
 import { BasicMaterialTableComponent } from './basic-material-table/basic-material-table.component';
 import { ExpandableMaterialTableComponent } from './expandable-material-table/expandable-material-table.component';
 import { ResizableMaterialTableComponent } from './resizable-material-table/resizable-material-table.component';
+import { AbstractResizableMaterialTableComponent } from './resizable-material-table/abstract-resizable-material-table/abstract-resizable-material-table.component';
 
 @NgModule({
-  declarations: [ExtendedMaterialTableComponent, MatTableExamplesComponent, BasicMaterialTableComponent, ExpandableMaterialTableComponent, ResizableMaterialTableComponent],
+  declarations: [ExtendedMaterialTableComponent, MatTableExamplesComponent, BasicMaterialTableComponent, ExpandableMaterialTableComponent, ResizableMaterialTableComponent, AbstractResizableMaterialTableComponent],
   imports: [
     CommonModule,
     MaterialModule,
