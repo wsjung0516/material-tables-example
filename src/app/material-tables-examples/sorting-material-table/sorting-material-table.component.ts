@@ -42,7 +42,6 @@ export class SortingMaterialTableComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;
-    console.log(this.sort);
   }
 
 }
