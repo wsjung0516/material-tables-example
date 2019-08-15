@@ -5,6 +5,7 @@ import { MatTableExamplesComponent } from '../mat-table-examples/mat-table-examp
 import { BasicMaterialTableComponent } from '../basic-material-table/basic-material-table.component';
 import { ExpandableMaterialTableComponent } from '../expandable-material-table/expandable-material-table.component';
 import { ResizableMaterialTableComponent } from '../resizable-material-table/resizable-material-table.component';
+import { SortingMaterialTableComponent } from '../sorting-material-table/sorting-material-table.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
       {
         path: 'resizable',
         component: ResizableMaterialTableComponent
+      },
+      {
+        path: 'basesorting',
+        component: SortingMaterialTableComponent
       }
     ]
   }
