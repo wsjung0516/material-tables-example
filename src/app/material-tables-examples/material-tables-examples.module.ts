@@ -6,9 +6,10 @@ import { ExampleRoutingModule } from './examples-routing/examples-routing.module
 import { MatTableExamplesComponent } from './mat-table-examples/mat-table-examples.component';
 import { BasicMaterialTableComponent } from './basic-material-table/basic-material-table.component';
 import { ExpandableMaterialTableComponent } from './expandable-material-table/expandable-material-table.component';
+import { ResizableMaterialTableComponent } from './resizable-material-table/resizable-material-table.component';
 
 @NgModule({
-  declarations: [ExtendedMaterialTableComponent, MatTableExamplesComponent, BasicMaterialTableComponent, ExpandableMaterialTableComponent],
+  declarations: [ExtendedMaterialTableComponent, MatTableExamplesComponent, BasicMaterialTableComponent, ExpandableMaterialTableComponent, ResizableMaterialTableComponent],
   imports: [
     CommonModule,
     MaterialModule,
