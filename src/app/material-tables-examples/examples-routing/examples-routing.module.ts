@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { MatTableExamplesComponent } from '../mat-table-examples/mat-table-examples.component';
 import { BasicMaterialTableComponent } from '../basic-material-table/basic-material-table.component';
 import { ExpandableMaterialTableComponent } from '../expandable-material-table/expandable-material-table.component';
+import { ResizableMaterialTableComponent } from '../resizable-material-table/resizable-material-table.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
       {
         path: 'expendable',
         component: ExpandableMaterialTableComponent
+      },
+      {
+        path: 'resizable',
+        component: ResizableMaterialTableComponent
       }
     ]
   }

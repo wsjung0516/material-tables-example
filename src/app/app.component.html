@@ -3,7 +3,8 @@
 <mat-button-toggle-group name="fontStyle" aria-label="Font Style" [(ngModel)]="mode">
   <mat-button-toggle value="basic" [routerLink]="[ '/matTableExamples/basic']">Podstawowa tabelka</mat-button-toggle>
   <mat-button-toggle value="extended" [routerLink]="[ '/matTableExamples/extended']">Rozszerzona tabelka</mat-button-toggle>
-  <mat-button-toggle value="extended" [routerLink]="[ '/matTableExamples/expendable']">Tabelka rozwijana</mat-button-toggle>
+  <mat-button-toggle value="expendable" [routerLink]="[ '/matTableExamples/expendable']">Tabelka rozwijana</mat-button-toggle>
+  <mat-button-toggle value="resizable" [routerLink]="[ '/matTableExamples/resizable']">Tabelka z zmienną szerokością kolumn</mat-button-toggle>
 </mat-button-toggle-group>
 
 <router-outlet></router-outlet>
