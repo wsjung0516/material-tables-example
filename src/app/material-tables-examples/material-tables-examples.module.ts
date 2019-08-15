@@ -7,14 +7,26 @@ import { MatTableExamplesComponent } from './mat-table-examples/mat-table-exampl
 import { BasicMaterialTableComponent } from './basic-material-table/basic-material-table.component';
 import { ExpandableMaterialTableComponent } from './expandable-material-table/expandable-material-table.component';
 import { ResizableMaterialTableComponent } from './resizable-material-table/resizable-material-table.component';
+// tslint:disable-next-line: max-line-length
 import { AbstractResizableMaterialTableComponent } from './resizable-material-table/abstract-resizable-material-table/abstract-resizable-material-table.component';
+import { SortingMaterialTableComponent } from './sorting-material-table/sorting-material-table.component';
+import { MatSortModule } from '@angular/material';
 
 @NgModule({
-  declarations: [ExtendedMaterialTableComponent, MatTableExamplesComponent, BasicMaterialTableComponent, ExpandableMaterialTableComponent, ResizableMaterialTableComponent, AbstractResizableMaterialTableComponent],
+  declarations: [
+    ExtendedMaterialTableComponent,
+    MatTableExamplesComponent,
+    BasicMaterialTableComponent,
+    ExpandableMaterialTableComponent,
+    ResizableMaterialTableComponent,
+    AbstractResizableMaterialTableComponent,
+    SortingMaterialTableComponent
+  ],
   imports: [
     CommonModule,
     MaterialModule,
-    ExampleRoutingModule
+    ExampleRoutingModule,
+    MatSortModule
   ],
   exports: [
     MatTableExamplesComponent

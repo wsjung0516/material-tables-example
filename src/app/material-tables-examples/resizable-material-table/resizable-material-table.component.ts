@@ -9,9 +9,7 @@ import { AbstractResizableMaterialTableComponent } from './abstract-resizable-ma
 })
 export class ResizableMaterialTableComponent extends AbstractResizableMaterialTableComponent implements OnInit, AfterViewInit {
 
-
-  data =
-  [
+  dataSource = [
     {
       name: 'Grzegorz',
       surname: 'Brzęczyszczykiewicz',
@@ -28,8 +26,6 @@ export class ResizableMaterialTableComponent extends AbstractResizableMaterialTa
       age: 35
     }
   ];
-
-  dataSource = this.data;
 
   constructor(protected renderer: Renderer2) {
     super(renderer);
