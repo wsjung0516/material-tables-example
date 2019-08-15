@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener, ElementRef, ViewChild, AfterViewInit, Renderer2 } from '@angular/core';
-import { MatTable } from '@angular/material';
+import { MatTable, MatSort, MatTableDataSource } from '@angular/material';
 import { AbstractResizableMaterialTableComponent } from './abstract-resizable-material-table/abstract-resizable-material-table.component';
 
 @Component({
@@ -9,7 +9,9 @@ import { AbstractResizableMaterialTableComponent } from './abstract-resizable-ma
 })
 export class ResizableMaterialTableComponent extends AbstractResizableMaterialTableComponent implements OnInit, AfterViewInit {
 
-  dataSource = [
+  dataSource: MatTableDataSource<any> = new MatTableDataSource<any>();
+
+  data: any[] = [
     {
       name: 'Grzegorz',
       surname: 'Brzęczyszczykiewicz',
@@ -30,6 +32,8 @@ export class ResizableMaterialTableComponent extends AbstractResizableMaterialTa
   constructor(protected renderer: Renderer2) {
     super(renderer);
 
+    this.dataSource.data = this.data;
+
     this.columns = [
       { field: 'name', width: 100, },
       { field: 'surname', width: 350, },
@@ -37,12 +41,15 @@ export class ResizableMaterialTableComponent extends AbstractResizableMaterialTa
     ];
   }
 
+  @ViewChild(MatSort, {static: false}) sort: MatSort;
+
   ngOnInit() {
     this.setDisplayedColumns();
   }
 
   ngAfterViewInit() {
     this.setTableResize(this.matTableRef.nativeElement.clientWidth);
+    this.dataSource.sort = this.sort;
   }
 
 }
