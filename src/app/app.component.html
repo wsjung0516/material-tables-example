@@ -1,0 +1,8 @@
+<h1>Przykłady zastosowania tablic materialowych</h1>
+
+<mat-button-toggle-group name="fontStyle" aria-label="Font Style" [(ngModel)]="mode">
+  <mat-button-toggle value="basic" [routerLink]="[ '/matTableExamples/basic']">Podstawowa tabelka</mat-button-toggle>
+  <mat-button-toggle value="extended" [routerLink]="[ '/matTableExamples/extended']">Rozszerzona tabelka</mat-button-toggle>
+</mat-button-toggle-group>
+
+<router-outlet></router-outlet>

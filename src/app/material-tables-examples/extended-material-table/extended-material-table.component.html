@@ -1,0 +1,27 @@
+<mat-table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Imię </mat-header-cell>
+        <mat-cell *matCellDef="let element" [ngClass]="{ 'extended-class': element.extended }">
+            <div [ngClass]="{ 'extended-class': element.extended }">
+                {{ element.name }}
+            </div>
+        </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="surname">
+        <mat-header-cell *matHeaderCellDef> Nazwisko </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.surname}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="age">
+        <mat-header-cell *matHeaderCellDef> Wiek </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.age}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+    <mat-row *matRowDef="let row; columns: ['name']; when: isExtended"></mat-row>
+
+</mat-table>
