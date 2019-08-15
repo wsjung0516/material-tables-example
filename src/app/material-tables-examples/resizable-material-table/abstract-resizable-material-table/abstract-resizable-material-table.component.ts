@@ -65,7 +65,6 @@ export class AbstractResizableMaterialTableComponent implements OnInit, AfterVie
   onResizeColumn(event: any, index: number) {
     this.checkResizing(event, index);
     this.currentResizeIndex = index;
-    this.pressed = true;
     this.startX = event.pageX;
     this.startWidth = event.target.clientWidth;
 
@@ -74,6 +73,8 @@ export class AbstractResizableMaterialTableComponent implements OnInit, AfterVie
     if (endPos - event.pageX > 10 && endPos - event.pageX >= 0) {
       return;
     }
+
+    this.pressed = true;
 
     event.preventDefault();
     this.mouseMove(index);
