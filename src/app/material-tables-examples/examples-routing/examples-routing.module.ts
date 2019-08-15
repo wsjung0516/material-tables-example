@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MatTableExamplesComponent } from '../mat-table-examples/mat-table-examples.component';
 import { BasicMaterialTableComponent } from '../basic-material-table/basic-material-table.component';
+import { ExpandableMaterialTableComponent } from '../expandable-material-table/expandable-material-table.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
       {
         path: 'extended',
         component: ExtendedMaterialTableComponent
+      },
+      {
+        path: 'expendable',
+        component: ExpandableMaterialTableComponent
       }
     ]
   }

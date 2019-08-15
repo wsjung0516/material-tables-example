@@ -5,9 +5,10 @@ import { MaterialModule } from '../material/material.module';
 import { ExampleRoutingModule } from './examples-routing/examples-routing.module';
 import { MatTableExamplesComponent } from './mat-table-examples/mat-table-examples.component';
 import { BasicMaterialTableComponent } from './basic-material-table/basic-material-table.component';
+import { ExpandableMaterialTableComponent } from './expandable-material-table/expandable-material-table.component';
 
 @NgModule({
-  declarations: [ExtendedMaterialTableComponent, MatTableExamplesComponent, BasicMaterialTableComponent],
+  declarations: [ExtendedMaterialTableComponent, MatTableExamplesComponent, BasicMaterialTableComponent, ExpandableMaterialTableComponent],
   imports: [
     CommonModule,
     MaterialModule,
