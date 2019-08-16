@@ -1,3 +1,4 @@
+import { StudentsService } from './../mat-table-examples/Services/students.service';
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { DataSource } from '@angular/cdk/table';
@@ -7,7 +8,6 @@ export class ExampleDataSource extends DataSource<any> {
 
   data: any[] = [];
 
-  /** Connect function called by the table to retrieve one stream containing the data to render. */
   connect(): Observable<Object[]> {
     const rows = [];
     this.data.forEach(element => rows.push(element, { detailRow: true, element }));
@@ -32,33 +32,16 @@ export class ExampleDataSource extends DataSource<any> {
 export class ExpandableMaterialTableComponent implements OnInit {
   displayedColumns = ['name', 'surname', 'age'];
 
-  data =
-  [
-    {
-      name: 'Grzegorz',
-      surname: 'Brzęczyszczykiewicz',
-      age: 22
-    },
-    {
-      name: 'Marian',
-      surname: 'Paździoch',
-      age: 60
-    },
-    {
-      name: 'Waldemar',
-      surname: 'Kiepski',
-      age: 35
-    }
-  ];
-
   expandedElement: any;
 
   dataSource = new ExampleDataSource();
 
-  isExpansionDetailRow = (i: number, row: Object) => row.hasOwnProperty('detailRow');
+  isExpansionDetailRow = (i: number, row: any) => row.hasOwnProperty('detailRow');
 
-  constructor() {
-    this.dataSource.data = this.data;
+  constructor(
+    private studentsService: StudentsService
+  ) {
+    this.dataSource.data = this.studentsService.data;
   }
 
   ngOnInit() {

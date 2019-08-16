@@ -1,3 +1,4 @@
+import { StudentsService } from './../mat-table-examples/Services/students.service';
 import { Component, OnInit, HostListener, ElementRef, ViewChild, AfterViewInit, Renderer2 } from '@angular/core';
 import { MatTable, MatSort, MatTableDataSource } from '@angular/material';
 import { AbstractResizableMaterialTableComponent } from './abstract-resizable-material-table/abstract-resizable-material-table.component';
@@ -11,28 +12,13 @@ export class ResizableMaterialTableComponent extends AbstractResizableMaterialTa
 
   dataSource: MatTableDataSource<any> = new MatTableDataSource<any>();
 
-  data: any[] = [
-    {
-      name: 'Grzegorz',
-      surname: 'Brzęczyszczykiewicz',
-      age: 22
-    },
-    {
-      name: 'Marian',
-      surname: 'Paździoch',
-      age: 60
-    },
-    {
-      name: 'Waldemar',
-      surname: 'Kiepski',
-      age: 35
-    }
-  ];
-
-  constructor(protected renderer: Renderer2) {
+  constructor(
+    protected renderer: Renderer2,
+    private studnetsService: StudentsService
+    ) {
     super(renderer);
 
-    this.dataSource.data = this.data;
+    this.dataSource.data = this.studnetsService.data;
 
     this.columns = [
       { field: 'name', width: 100, },
