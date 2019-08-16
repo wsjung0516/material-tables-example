@@ -1,17 +1,17 @@
-<mat-table #table [dataSource]="dataSource" matSort>
+<mat-table #table [dataSource]="dataSource" matSort (matSortChange)="sorting($event)">
 
     <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Imię </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header="name"> Imię </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="surname">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Nazwisko </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header="surname"> Nazwisko </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.surname}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="age">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Wiek </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header="age"> Wiek </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{ element.age }} </mat-cell>
     </ng-container>
 

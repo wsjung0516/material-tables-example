@@ -28,4 +28,8 @@ export class SortingMaterialTableComponent implements OnInit, AfterViewInit {
     this.dataSource.sort = this.sort;
   }
 
+  sorting(sortEvent) {
+    console.log(sortEvent);
+  }
+
 }
