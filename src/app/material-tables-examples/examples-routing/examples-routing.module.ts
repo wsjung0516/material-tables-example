@@ -1,3 +1,4 @@
+import { FilteredMatTableComponent } from './../mat-table-examples/filtered-mat-table/filtered-mat-table.component';
 import { ExtendedMaterialTableComponent } from './../extended-material-table/extended-material-table.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -31,6 +32,10 @@ const routes: Routes = [
       {
         path: 'basesorting',
         component: SortingMaterialTableComponent
+      },
+      {
+        path: 'filtering',
+        component: FilteredMatTableComponent
       }
     ]
   }

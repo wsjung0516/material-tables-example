@@ -1,1 +1,36 @@
-<p>filtered-mat-table works!</p>
+<section>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Wyszukaj w tabelce</mat-label>
+        <input matInput (keyup)="queryChanged($event.target.value)">
+    </mat-form-field>
+
+    <mat-table [dataSource]="dataSource">
+
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef="let element;" mat-sort-header matSort>
+                Imię
+            </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{ element.name }} </mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="surname">
+            <mat-header-cell *matHeaderCellDef="let element;">
+                Nazwisko
+            </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{ element.surname }} </mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="age">
+            <mat-header-cell *matHeaderCellDef="let element;">
+                Wiek
+            </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{ element.age }} </mat-cell>
+        </ng-container>
+    
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        
+    </mat-table>
+
+</section>
