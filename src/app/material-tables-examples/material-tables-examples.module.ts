@@ -11,6 +11,7 @@ import { ResizableMaterialTableComponent } from './resizable-material-table/resi
 import { AbstractResizableMaterialTableComponent } from './resizable-material-table/abstract-resizable-material-table/abstract-resizable-material-table.component';
 import { SortingMaterialTableComponent } from './sorting-material-table/sorting-material-table.component';
 import { MatSortModule } from '@angular/material';
+import { FilteredMatTableComponent } from './mat-table-examples/filtered-mat-table/filtered-mat-table.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MatSortModule } from '@angular/material';
     ExpandableMaterialTableComponent,
     ResizableMaterialTableComponent,
     AbstractResizableMaterialTableComponent,
-    SortingMaterialTableComponent
+    SortingMaterialTableComponent,
+    FilteredMatTableComponent
   ],
   imports: [
     CommonModule,
