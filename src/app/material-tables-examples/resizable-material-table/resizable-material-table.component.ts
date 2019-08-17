@@ -1,6 +1,6 @@
 import { StudentsService } from './../mat-table-examples/Services/students.service';
-import { Component, OnInit, HostListener, ElementRef, ViewChild, AfterViewInit, Renderer2 } from '@angular/core';
-import { MatTable, MatSort, MatTableDataSource } from '@angular/material';
+import { Component, OnInit, ViewChild, AfterViewInit, Renderer2 } from '@angular/core';
+import { MatSort, MatTableDataSource } from '@angular/material';
 import { AbstractResizableMaterialTableComponent } from './abstract-resizable-material-table/abstract-resizable-material-table.component';
 
 @Component({
