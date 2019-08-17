@@ -12,6 +12,7 @@ import { AbstractResizableMaterialTableComponent } from './resizable-material-ta
 import { SortingMaterialTableComponent } from './sorting-material-table/sorting-material-table.component';
 import { MatSortModule } from '@angular/material';
 import { FilteredMatTableComponent } from './mat-table-examples/filtered-mat-table/filtered-mat-table.component';
+import { MultiSelectMatTableComponent } from './multi-select-mat-table/multi-select-mat-table.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FilteredMatTableComponent } from './mat-table-examples/filtered-mat-tab
     ResizableMaterialTableComponent,
     AbstractResizableMaterialTableComponent,
     SortingMaterialTableComponent,
-    FilteredMatTableComponent
+    FilteredMatTableComponent,
+    MultiSelectMatTableComponent
   ],
   imports: [
     CommonModule,
