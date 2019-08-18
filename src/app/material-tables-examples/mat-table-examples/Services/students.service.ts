@@ -1,3 +1,4 @@
+import { Student } from './../../Interfaces/student';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class StudentsService {
 
-  data =
+  data: Student[] =
   [
     {
       name: 'Grzegorz',

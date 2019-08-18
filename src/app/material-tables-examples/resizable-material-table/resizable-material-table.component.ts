@@ -2,6 +2,7 @@ import { StudentsService } from './../mat-table-examples/Services/students.servi
 import { Component, OnInit, ViewChild, AfterViewInit, Renderer2 } from '@angular/core';
 import { MatSort, MatTableDataSource } from '@angular/material';
 import { AbstractResizableMaterialTableComponent } from './abstract-resizable-material-table/abstract-resizable-material-table.component';
+import { Student } from '../Interfaces/student';
 
 @Component({
   selector: 'app-resizable-material-table',
@@ -10,7 +11,7 @@ import { AbstractResizableMaterialTableComponent } from './abstract-resizable-ma
 })
 export class ResizableMaterialTableComponent extends AbstractResizableMaterialTableComponent implements OnInit, AfterViewInit {
 
-  dataSource: MatTableDataSource<any> = new MatTableDataSource<any>();
+  dataSource: MatTableDataSource<Student> = new MatTableDataSource<Student>();
 
   constructor(
     protected renderer: Renderer2,

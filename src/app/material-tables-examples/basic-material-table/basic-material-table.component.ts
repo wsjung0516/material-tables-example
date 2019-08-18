@@ -1,3 +1,5 @@
+import { Student } from './../Interfaces/student';
+import { StudentsService } from './../mat-table-examples/Services/students.service';
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 
@@ -14,31 +16,14 @@ export class BasicMaterialTableComponent implements OnInit {
     'age'
   ];
 
-  data =
-  [
-    {
-      name: 'Grzegorz',
-      surname: 'Brzęczyszczykiewicz',
-      age: 22
-    },
-    {
-      name: 'Marian',
-      surname: 'Paździoch',
-      age: 60
-    },
-    {
-      name: 'Waldemar',
-      surname: 'Kiepski',
-      age: 35
-    }
-  ];
+  dataSource: MatTableDataSource<Student> = new MatTableDataSource<Student>();
 
-  dataSource: MatTableDataSource<any> = new MatTableDataSource<any>();
-
-  constructor() { }
+  constructor(
+    private studentsService: StudentsService
+  ) { }
 
   ngOnInit() {
-    this.dataSource.data = this.data;
+    this.dataSource.data = this.studentsService.data;
   }
 
 }

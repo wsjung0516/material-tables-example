@@ -1,6 +1,7 @@
 import { StudentsService } from './../Services/students.service';
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { MatTableDataSource, MatSort } from '@angular/material';
+import { Student } from '../../Interfaces/student';
 
 @Component({
   selector: 'app-filtered-mat-table',
@@ -13,7 +14,7 @@ export class FilteredMatTableComponent implements OnInit, AfterViewInit {
 
   displayedColumns: string[] = ['name', 'surname', 'age'];
 
-  dataSource: MatTableDataSource<any> = new MatTableDataSource<any>();
+  dataSource: MatTableDataSource<Student> = new MatTableDataSource<Student>();
 
   @ViewChild(MatSort, { static: false }) matSort: MatSort;
 
@@ -24,7 +25,8 @@ export class FilteredMatTableComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.dataSource.data = this.studentsService.data;
 
-    this.dataSource.filterPredicate = (data: any, query: string) => query !== '' ? (data.name + ' ' + data.surname).toLowerCase().search(query.toLocaleLowerCase()) !== -1 : false;
+    this.dataSource.filterPredicate = (data: any, query: string) => query !== ''
+      ? (data.name + ' ' + data.surname).toLowerCase().search(query.toLocaleLowerCase()) !== -1 : false;
   }
 
   ngAfterViewInit() {

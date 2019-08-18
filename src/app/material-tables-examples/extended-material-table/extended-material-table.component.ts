@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
+import { Student } from '../Interfaces/student';
 
 @Component({
   selector: 'app-extended-material-table',
@@ -14,11 +15,11 @@ export class ExtendedMaterialTableComponent implements OnInit {
     'age'
   ];
 
-  data = [
+  data: Student[] = [
     {
       name: 'Czarna lista studenciaków',
       extended: true
-    },
+    } as unknown as Student,
     {
       name: 'Grzegorz',
       surname: 'Brzęczyszczykiewicz',
@@ -27,7 +28,7 @@ export class ExtendedMaterialTableComponent implements OnInit {
     {
       name: 'Biała lista studenciaków',
       extended: true
-    },
+    } as unknown as Student,
     {
       name: 'Grzegorz',
       surname: 'Brzęczyszczykiewicz',
@@ -35,7 +36,7 @@ export class ExtendedMaterialTableComponent implements OnInit {
     }
   ];
 
-  dataSource: MatTableDataSource<any> = new MatTableDataSource<any>();
+  dataSource: MatTableDataSource<Student> = new MatTableDataSource<Student>();
 
   isExtended = (index, element) => element.extended;
 
