@@ -13,6 +13,8 @@ import { SortingMaterialTableComponent } from './sorting-material-table/sorting-
 import { MatSortModule } from '@angular/material';
 import { FilteredMatTableComponent } from './mat-table-examples/filtered-mat-table/filtered-mat-table.component';
 import { MultiSelectMatTableComponent } from './multi-select-mat-table/multi-select-mat-table.component';
+// tslint:disable-next-line: max-line-length
+import { AbstractMulitSelectMatTableComponent } from './multi-select-mat-table/abstract-mulit-select-mat-table/abstract-mulit-select-mat-table.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { MultiSelectMatTableComponent } from './multi-select-mat-table/multi-sel
     AbstractResizableMaterialTableComponent,
     SortingMaterialTableComponent,
     FilteredMatTableComponent,
-    MultiSelectMatTableComponent
+    MultiSelectMatTableComponent,
+    AbstractMulitSelectMatTableComponent
   ],
   imports: [
     CommonModule,

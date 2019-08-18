@@ -3,12 +3,13 @@ import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { DataSource } from '@angular/cdk/table';
 import { Observable, of } from 'rxjs';
+import { Student } from '../Interfaces/student';
 
-export class ExampleDataSource extends DataSource<any> {
+export class ExampleDataSource<RECORD_TYPE> extends DataSource<RECORD_TYPE> {
 
   data: any[] = [];
 
-  connect(): Observable<Object[]> {
+  connect(): Observable<RECORD_TYPE[]> {
     const rows = [];
     this.data.forEach(element => rows.push(element, { detailRow: true, element }));
     return of(rows);
@@ -34,7 +35,7 @@ export class ExpandableMaterialTableComponent implements OnInit {
 
   expandedElement: any;
 
-  dataSource = new ExampleDataSource();
+  dataSource = new ExampleDataSource<Student>();
 
   isExpansionDetailRow = (i: number, row: any) => row.hasOwnProperty('detailRow');
 

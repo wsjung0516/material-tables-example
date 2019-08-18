@@ -1,6 +1,7 @@
+import { Student } from './../Interfaces/student';
+import { AbstractMulitSelectMatTableComponent } from './abstract-mulit-select-mat-table/abstract-mulit-select-mat-table.component';
 import { StudentsService } from './../mat-table-examples/Services/students.service';
 import { Component, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material';
 import { SelectionModel } from '@angular/cdk/collections';
 
 @Component({
@@ -8,44 +9,23 @@ import { SelectionModel } from '@angular/cdk/collections';
   templateUrl: './multi-select-mat-table.component.html',
   styleUrls: ['./multi-select-mat-table.component.scss']
 })
-export class MultiSelectMatTableComponent implements OnInit {
-
-  dataSource: MatTableDataSource<any> = new MatTableDataSource<any>();
-  displayedColumns: string[] = [
-    'select',
-    'name',
-    'surname',
-    'age'
-  ];
-
-  selection: SelectionModel<any>;
+export class MultiSelectMatTableComponent extends AbstractMulitSelectMatTableComponent<Student> implements OnInit {
 
   constructor(
     private studentsService: StudentsService
-  ) { }
+  ) {
+    super();
+  }
 
   ngOnInit() {
+    this.displayedColumns = [
+      'select',
+      'name',
+      'surname',
+      'age'
+    ];
     this.dataSource.data = this.studentsService.data;
-    this.selection = new SelectionModel<any>(true, []);
-  }
-
-  isAllSelected() {
-    const numSelected = this.selection.selected.length;
-    const numRows = this.dataSource.data.length;
-    return numSelected === numRows;
-  }
-
-  masterToggle() {
-    this.isAllSelected() ?
-      this.selection.clear() :
-      this.dataSource.data.forEach(row => this.selection.select(row));
-  }
-
-  checkboxLabel(row: any): string {
-    if (!row) {
-      return `${this.isAllSelected() ? 'select' : 'deselect'} all`;
-    }
-    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} wiersz`;
+    this.selection = new SelectionModel<Student>(true, []);
   }
 
 }
