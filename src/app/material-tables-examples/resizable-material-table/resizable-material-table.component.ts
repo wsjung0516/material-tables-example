@@ -22,9 +22,18 @@ export class ResizableMaterialTableComponent extends AbstractResizableMaterialTa
     this.dataSource.data = this.studnetsService.data;
 
     this.columns = [
-      { field: 'name', width: 100, },
-      { field: 'surname', width: 350, },
-      { field: 'age', width: 250, }
+      {
+        field: 'name',
+        width: 100
+      },
+      {
+        field: 'surname',
+        width: 350
+      },
+      {
+        field: 'age',
+        width: 250
+      }
     ];
   }
 
