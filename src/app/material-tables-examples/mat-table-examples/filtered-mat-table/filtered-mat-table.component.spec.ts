@@ -53,14 +53,14 @@ describe('FilteredMatTableComponent', () => {
     });
 
   describe(
-    'FilteredMatTableComponent -> should have some data filtered data',
+    'FilteredMatTableComponent -> should have some filtered data',
     () => {
 
       beforeEach(() => {
         component.dataSource.filter = 'grzegorz';
       });
 
-      it('should have some data', () => {
+      it('should have some filtered data', () => {
         console.log(component.dataSource.filteredData);
         expect(JSON.stringify(component.dataSource.filteredData)).toEqual(JSON.stringify([studentsService.data[0]]));
       });
