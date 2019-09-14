@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MultiSelectMatTableComponent } from './multi-select-mat-table.component';
+import { MatTableModule, MatCheckboxModule } from '@angular/material';
 
 describe('MultiSelectMatTableComponent', () => {
   let component: MultiSelectMatTableComponent;
@@ -8,7 +9,11 @@ describe('MultiSelectMatTableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MultiSelectMatTableComponent ]
+      declarations: [ MultiSelectMatTableComponent ],
+      imports: [
+        MatTableModule,
+        MatCheckboxModule,
+      ]
     })
     .compileComponents();
   }));

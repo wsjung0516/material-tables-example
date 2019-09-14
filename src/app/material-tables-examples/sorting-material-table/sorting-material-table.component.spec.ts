@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SortingMaterialTableComponent } from './sorting-material-table.component';
+import { MatTableModule } from '@angular/material';
 
 describe('SortingMaterialTableComponent', () => {
   let component: SortingMaterialTableComponent;
@@ -8,7 +9,10 @@ describe('SortingMaterialTableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SortingMaterialTableComponent ]
+      declarations: [ SortingMaterialTableComponent ],
+      imports: [
+        MatTableModule
+      ]
     })
     .compileComponents();
   }));

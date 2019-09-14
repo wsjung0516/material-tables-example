@@ -1,6 +1,8 @@
+import { MaterialModule } from './../../material/material.module';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ResizableMaterialTableComponent } from './resizable-material-table.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('ResizableMaterialTableComponent', () => {
   let component: ResizableMaterialTableComponent;
@@ -8,7 +10,11 @@ describe('ResizableMaterialTableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ResizableMaterialTableComponent ]
+      declarations: [ ResizableMaterialTableComponent ],
+      imports: [
+        MaterialModule,
+        BrowserAnimationsModule
+      ]
     })
     .compileComponents();
   }));
