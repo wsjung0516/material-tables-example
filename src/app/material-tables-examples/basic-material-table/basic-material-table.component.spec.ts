@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BasicMaterialTableComponent } from './basic-material-table.component';
+import { MatTableModule } from '@angular/material';
 
 describe('BasicMaterialTableComponent', () => {
   let component: BasicMaterialTableComponent;
@@ -8,7 +9,10 @@ describe('BasicMaterialTableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BasicMaterialTableComponent ]
+      declarations: [ BasicMaterialTableComponent ],
+      imports: [
+        MatTableModule
+      ]
     })
     .compileComponents();
   }));

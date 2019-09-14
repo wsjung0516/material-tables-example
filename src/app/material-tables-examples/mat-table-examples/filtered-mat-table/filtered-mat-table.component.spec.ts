@@ -1,6 +1,8 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FilteredMatTableComponent } from './filtered-mat-table.component';
+import { MatTableModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 
 describe('FilteredMatTableComponent', () => {
   let component: FilteredMatTableComponent;
@@ -8,7 +10,13 @@ describe('FilteredMatTableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FilteredMatTableComponent ]
+      declarations: [ FilteredMatTableComponent ],
+      imports: [
+        MatTableModule,
+        MatFormFieldModule,
+        MatInputModule,
+        BrowserAnimationsModule
+      ]
     })
     .compileComponents();
   }));
