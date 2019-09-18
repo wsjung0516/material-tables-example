@@ -8,6 +8,7 @@ import { ExpandableMaterialTableComponent } from '../expandable-material-table/e
 import { ResizableMaterialTableComponent } from '../resizable-material-table/resizable-material-table.component';
 import { SortingMaterialTableComponent } from '../sorting-material-table/sorting-material-table.component';
 import { MultiSelectMatTableComponent } from '../multi-select-mat-table/multi-select-mat-table.component';
+import { TwoTablesDragAndDropComponent } from '../two-tables-drag-and-drop/two-tables-drag-and-drop.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
       {
         path: 'multiselect',
         component: MultiSelectMatTableComponent
+      },
+      {
+        path: 'dragenddrop',
+        component: TwoTablesDragAndDropComponent
       }
     ]
   }
