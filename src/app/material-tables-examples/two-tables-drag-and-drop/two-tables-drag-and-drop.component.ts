@@ -22,9 +22,10 @@ export class TwoTablesDragAndDropComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
 
-    timer(10).subscribe(() => {
+    timer(100).subscribe(() => {
       this.secondTable.dataSource.data = this.studentsService.data;
-      console.log(this.firstTable.cdkDropList);
+      this.secondTable.secondTable = this.firstTable;
+      this.firstTable.secondTable = this.secondTable;
     });
 
   }
