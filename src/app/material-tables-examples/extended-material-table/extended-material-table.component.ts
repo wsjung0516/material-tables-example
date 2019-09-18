@@ -21,15 +21,18 @@ export class ExtendedMaterialTableComponent implements OnInit {
       extended: true
     } as unknown as Student,
     {
+      id: 1,
       name: 'Grzegorz',
       surname: 'Brzęczyszczykiewicz',
       age: 22
     },
     {
+      id: 2,
       name: 'Biała lista studenciaków',
       extended: true
     } as unknown as Student,
     {
+      id: 3,
       name: 'Grzegorz',
       surname: 'Brzęczyszczykiewicz',
       age: 22

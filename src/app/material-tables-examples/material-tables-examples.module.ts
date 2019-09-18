@@ -15,6 +15,8 @@ import { FilteredMatTableComponent } from './mat-table-examples/filtered-mat-tab
 import { MultiSelectMatTableComponent } from './multi-select-mat-table/multi-select-mat-table.component';
 // tslint:disable-next-line: max-line-length
 import { AbstractMulitSelectMatTableComponent } from './multi-select-mat-table/abstract-mulit-select-mat-table/abstract-mulit-select-mat-table.component';
+import { TwoTablesDragAndDropComponent } from './two-tables-drag-and-drop/two-tables-drag-and-drop.component';
+import { TableDragAndDropComponent } from './two-tables-drag-and-drop/table-drag-and-drop/table-drag-and-drop.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { AbstractMulitSelectMatTableComponent } from './multi-select-mat-table/a
     SortingMaterialTableComponent,
     FilteredMatTableComponent,
     MultiSelectMatTableComponent,
-    AbstractMulitSelectMatTableComponent
+    AbstractMulitSelectMatTableComponent,
+    TwoTablesDragAndDropComponent,
+    TableDragAndDropComponent
   ],
   imports: [
     CommonModule,

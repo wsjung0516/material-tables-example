@@ -18,7 +18,7 @@ import { FormsModule } from '@angular/forms';
     MaterialTablesExamplesModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
