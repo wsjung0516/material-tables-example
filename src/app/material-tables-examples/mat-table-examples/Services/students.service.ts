@@ -72,31 +72,31 @@ export class StudentsService {
       id: 11,
       name: 'Antonina',
       surname: 'Olszewska',
-      age: 20
+      age: 22
     },
     {
       id: 12,
       name: 'Patrycja',
       surname: 'Augustyniak',
-      age: 20
+      age: 25
     },
     {
       id: 13,
       name: 'Kajetan',
       surname: 'Tomaszewski',
-      age: 20
+      age: 26
     },
     {
       id: 14,
       name: 'Aleksandra',
       surname: 'Kowalska',
-      age: 20
+      age: 35
     },
     {
       id: 15,
       name: 'Michał',
       surname: 'Dąbrowski',
-      age: 20
+      age: 18
     }
   ];
 
