@@ -2,8 +2,8 @@
     <app-table-drag-and-drop #firstTable></app-table-drag-and-drop>
 
     <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center" class="buttons-table">
-        <button mat-raised-button><mat-icon>arrow_back</mat-icon></button>
-        <button mat-raised-button><mat-icon>arrow_forward</mat-icon></button>
+        <button mat-raised-button (click)="moveDataToLeftTable()"><mat-icon>arrow_back</mat-icon></button>
+        <button mat-raised-button (click)="moveDataToRightTable()"><mat-icon>arrow_forward</mat-icon></button>
     </div>
 
     <app-table-drag-and-drop #secondTable></app-table-drag-and-drop>
