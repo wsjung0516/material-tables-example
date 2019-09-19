@@ -30,4 +30,14 @@ export class TwoTablesDragAndDropComponent implements OnInit, AfterViewInit {
 
   }
 
+  moveDataToRightTable() {
+    this.secondTable.dataSource.data = [...this.secondTable.dataSource.data, ...this.firstTable.dataSource.data];
+    this.firstTable.dataSource.data = [];
+  }
+
+  moveDataToLeftTable() {
+    this.firstTable.dataSource.data = [...this.firstTable.dataSource.data, ...this.secondTable.dataSource.data];
+    this.secondTable.dataSource.data = [];
+  }
+
 }

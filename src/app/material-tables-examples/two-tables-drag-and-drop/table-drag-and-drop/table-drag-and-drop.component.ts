@@ -44,4 +44,11 @@ export class TableDragAndDropComponent implements OnInit {
     }
   }
 
+  moveItem(index: number) {
+    const element: Student[] = this.dataSource.data.splice(index, 1);
+    this.matTable.renderRows();
+    this.secondTable.dataSource.data.push(element[0]);
+    this.secondTable.matTable.renderRows();
+  }
+
 }
