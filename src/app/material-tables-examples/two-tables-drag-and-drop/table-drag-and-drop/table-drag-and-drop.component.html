@@ -1,4 +1,6 @@
-<div class="table-container">
+<div class="table-container" cdkDropList #todoList="cdkDropList" [cdkDropListData]="this.dataSource.data"
+(cdkDropListDropped)="drop($event)"
+[cdkDropListConnectedTo]="this.secondTable ? [secondTable.cdkDropList] : []">
     <mat-table [dataSource]="dataSource" cdkDropList #todoList="cdkDropList" [cdkDropListData]="this.dataSource.data"
         (cdkDropListDropped)="drop($event)"
         [cdkDropListConnectedTo]="this.secondTable ? [secondTable.cdkDropList] : []">
