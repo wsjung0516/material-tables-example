@@ -1,7 +1,7 @@
 <mat-table [dataSource]="dataSource">
 
   <ng-container matColumnDef="name">
-    <mat-header-cell *matHeaderCellDef> Imię </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef> First Name </mat-header-cell>
     <mat-cell *matCellDef="let element" [ngClass]="{ 'extended-class': element.extended }">
       <div [ngClass]="{ 'extended-class': element.extended }">
         {{ element.name }}
@@ -10,12 +10,12 @@
   </ng-container>
 
   <ng-container matColumnDef="surname">
-    <mat-header-cell *matHeaderCellDef> Nazwisko </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef> Last Name </mat-header-cell>
     <mat-cell *matCellDef="let element"> {{ element.surname }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="age">
-    <mat-header-cell *matHeaderCellDef> Wiek </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef> Age </mat-header-cell>
     <mat-cell *matCellDef="let element"> {{ element.age }} </mat-cell>
   </ng-container>
 

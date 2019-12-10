@@ -1,36 +1,36 @@
 <div>
     <mat-table [dataSource]="dataSource">
-  
+
       <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef> Imię </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef> First Name </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
       </ng-container>
-  
+
       <ng-container matColumnDef="surname">
-        <mat-header-cell *matHeaderCellDef> Nazwisko </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef> Last Name </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.surname}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="age">
-        <mat-header-cell *matHeaderCellDef> Wiek </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef> Age </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.age}} </mat-cell>
       </ng-container>
-  
+
       <ng-container matColumnDef="expandedDetail">
-        <mat-cell *matCellDef="let detail"> 
+        <mat-cell *matCellDef="let detail">
           Studenciak {{detail.element.name}} {{detail.element.surname}} jest najlepszy!
         </mat-cell>
       </ng-container>
-  
+
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
       <mat-row *matRowDef="let row; columns: displayedColumns;"
-              matRipple 
-              class="element-row" 
+              matRipple
+              class="element-row"
               [class.expanded]="expandedElement == row"
               (click)="expandedElement === row? expandedElement = null : expandedElement = row"></mat-row>
       <mat-row *matRowDef="let row; columns: ['expandedDetail']; when: isExpansionDetailRow"
               [@detailExpand]="row.element == expandedElement ? 'expanded' : 'collapsed'"
-              style="overflow: hidden"> 
+              style="overflow: hidden">
       </mat-row>
     </mat-table>
   </div>
